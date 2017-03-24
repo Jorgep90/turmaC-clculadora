@@ -12,6 +12,7 @@ namespace calcuadoraCompleta.Controllers
         public ActionResult Index()
         {
             ViewBag.visor = "0";
+            Session["operador"] = "";
             return View();
         }
         /// <summary>
@@ -22,8 +23,6 @@ namespace calcuadoraCompleta.Controllers
         [HttpPost]
         public ActionResult Index(string btn, string visor)
         {
-            string auxvisor = visor;
-            
             switch (btn)
             {
                 case "1":
@@ -37,24 +36,39 @@ namespace calcuadoraCompleta.Controllers
                 case "9":
                 case "0":
                     if (visor.Equals("0"))
-                    visor = btn;   
-                    else                 
-                    visor += btn;
+                        visor = btn;
+                    else
+                        visor += btn;
                     break;
                 case "C":
                     visor = "0";
                     break;
                 case ",":
-                if (!visor.Contains(",")) visor += btn;
-                    break;
-                case "+":
-                    visor = auxvisor + "+";
+                    if (!visor.Contains(",")) visor += btn;
                     break;
                 case "+/-":
                     if (!visor.StartsWith("-")) visor = "-" + visor;
                     else visor = visor.Replace("-", "");
                     break;
+                case "+":
+                    if (Convert.ToString(Session["operador"]).Equals(""))
+                    {
+                        Session["operador"] = btn;
+                        Session["operando"] = visor;
+                        visor = "";
+                    }
+                    else {
+
+                    }
+                    break;
+                case "-":
+                    break;
+                case ":":
+                    break;
+                case "x":
+                    break;
             }
+
             ViewBag.visor = visor;
             return View();
         }
