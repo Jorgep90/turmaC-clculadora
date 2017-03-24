@@ -11,6 +11,7 @@ namespace calcuadoraCompleta.Controllers
         // GET: Home
         public ActionResult Index()
         {
+            ViewBag.visor = "0";
             return View();
         }
         /// <summary>
@@ -22,6 +23,7 @@ namespace calcuadoraCompleta.Controllers
         public ActionResult Index(string btn, string visor)
         {
             string auxvisor = visor;
+            
             switch (btn)
             {
                 case "1":
@@ -34,10 +36,16 @@ namespace calcuadoraCompleta.Controllers
                 case "8":
                 case "9":
                 case "0":
-                    visor = auxvisor + btn;
+                    if (visor.Equals("0"))
+                    visor = btn;   
+                    else                 
+                    visor += btn;
                     break;
                 case "C":
                     visor = "0";
+                    break;
+                case ",":
+                if (!visor.Contains(",")) visor += btn;
                     break;
                 case "+":
                     visor = auxvisor + "+";
