@@ -17,10 +17,33 @@ namespace calcuadoraCompleta.Controllers
         /// recebe numeros  
         /// </summary>
         /// <returns></returns>
-        
+
         [HttpPost]
         public ActionResult Index(string btn, string visor)
         {
+            string auxvisor = visor;
+            switch (btn)
+            {
+                case "1":
+                case "2":
+                case "3":
+                case "4":
+                case "5":
+                case "6":
+                case "7":
+                case "8":
+                case "9":
+                case "0":
+                    visor = auxvisor + btn;
+                    break;
+                case "C":
+                    visor = "0";
+                    break;
+                case "+":
+                    visor = auxvisor + "+";
+                    break;
+            }
+            ViewBag.visor = visor;
             return View();
         }
     }

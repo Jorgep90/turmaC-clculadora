@@ -9,78 +9,82 @@
 <head>
     <meta name="viewport" content="width=device-width" />
     <title>Calculadora</title>
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
 </head>
 <body>
     <div>
         <h1>Calculadora mais completa</h1>
         <form method="post">
-            <table border="1">
+            <table style="border-spacing:5px; border-collapse:collapse;border:1px solid #0026ff">
                 <tr>
-                    <td colspan="5">Visor</td>
+                    <td colspan="5">
+                        <input style="height:30px;width:215px; text-align:right;background-color:white;" type="text" readonly="readonly" id="visor" name="visor" class="form-control" value="@ViewBag.visor" />
+
+                    </td>
                 </tr>
                 <tr>
                     <td>
-                        <input type="submit" name="btn" value="7" />
+                        <input type="submit" name="btn" value="7" class="btn btn-default" style="height:40px; width:40px" />
                     </td>
                     <td>
-                        <input type="submit" name="btn" value="8" />
+                        <input type="submit" name="btn" value="8" class="btn btn-default" style="height:40px; width:40px" />
                     </td>
                     <td>
-                        <input type="submit" name="btn" value="9" />
+                        <input type="submit" name="btn" value="9" class="btn btn-default" style="height:40px; width:40px" />
                     </td>
                     <td>
-                        <input type="submit" name="btn" value=":" />
+                        <input type="submit" name="btn" value=":" class="btn btn-default" style="height:40px; width:40px" />
                     </td>
                     <td>
-                        <input type="submit" name="btn" value="+/-" />
+                        <input type="submit" name="btn" value="+/-" class="btn btn-default" style="height:40px; width:40px" />
                     </td>
 
                 </tr>
                 <tr>
                     <td>
-                        <input type="submit" name="btn" value="4" />
+                        <input type="submit" name="btn" value="4" class="btn btn-default" style="height:40px; width:40px" />
                     </td>
                     <td>
-                        <input type="submit" name="btn" value="5" />
+                        <input type="submit" name="btn" value="5" class="btn btn-default" style="height:40px; width:40px" />
                     </td>
                     <td>
-                        <input type="submit" name="btn" value="6" />
+                        <input type="submit" name="btn" value="6" class="btn btn-default" style="height:40px; width:40px" />
                     </td>
                     <td>
-                        <input type="submit" name="btn" value="x" />
+                        <input type="submit" name="btn" value="x" class="btn btn-default" style="height:40px; width:40px" />
                     </td>
                     <td>
-                        <input type="submit" name="btn" value="c" />
+                        <input type="submit" name="btn" value="C" class="btn btn-danger" style="height:40px; width:40px" />
                     </td>
 
                 </tr>
                 <tr>
                     <td>
-                        <input type="submit" name="btn" value="1" />
+                        <input type="submit" name="btn" value="1" class="btn btn-default" style="height:40px; width:40px" />
                     </td>
                     <td>
-                        <input type="submit" name="btn" value="2" />
+                        <input type="submit" name="btn" value="2" class="btn btn-default" style="height:40px; width:40px" />
                     </td>
                     <td>
-                        <input type="submit" name="btn" value="3" />
+                        <input type="submit" name="btn" value="3" class="btn btn-default" style="height:40px; width:40px" />
                     </td>
                     <td>
-                        <input type="submit" name="btn" value="-" />
+                        <input type="submit" name="btn" value="-" class="btn btn-default" style="height:40px; width:40px" />
                     </td>
                     <td rowspan="2">
-                        <input type="submit" name="btn" value="=" />
+                        <input type="submit" name="btn" value="=" class="btn btn-default" style="height:85px; width:40px" />
                     </td>
 
                 </tr>
                 <tr>
                     <td colspan="2">
-                        <input type="submit" name="btn" value="0" />
+                        <input type="submit" name="btn" value="0" class="btn btn-default" style="height:40px; width:85px" />
                     </td>
                     <td>
-                        <input type="submit" name="btn" value="," />
+                        <input type="submit" name="btn" value="," class="btn btn-default" style="height:40px; width:40px" />
                     </td>
                     <td>
-                        <input type="submit" name="btn" value="+" />
+                        <input type="submit" name="btn" value="+" class="btn btn-default" style="height:40px; width:40px" />
                     </td>
                 </tr>
             </table>
