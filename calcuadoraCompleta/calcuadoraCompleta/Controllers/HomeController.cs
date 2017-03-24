@@ -50,6 +50,10 @@ namespace calcuadoraCompleta.Controllers
                 case "+":
                     visor = auxvisor + "+";
                     break;
+                case "+/-":
+                    if (!visor.StartsWith("-")) visor = "-" + visor;
+                    else visor = visor.Replace("-", "");
+                    break;
             }
             ViewBag.visor = visor;
             return View();
